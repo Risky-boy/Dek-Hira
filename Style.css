@@ -1,0 +1,145 @@
+:root {
+  --warna-bg: rgba(0, 0, 0, .3);
+  --tombol-teks: #fff;
+  --tombol-bingkai: #fff;
+  --bingkai: 18px;
+  --bingkai-kiri: 1.3px solid var(--tombol-bingkai);
+  --bingkai-kanan: 1.3px solid var(--tombol-bingkai);
+  --gaya-font: 'Nunito Sans', sans-serif;
+  --gaya-font2: 'Sono', sans-serif;
+  --gaya-font3: 'Nerko One', cursive;
+}
+
+body {
+  background-color: #000;
+  font-family: var(--gaya-font);
+  padding: 20px 25px;
+  user-select: none;
+}
+a {
+  text-decoration: none;
+}
+body::before {
+  content: "© sari | Risky";
+  color: white;
+  opacity: .25;
+  font-size: 10px;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 2;
+}
+#bodyblur {
+  animation: jj 7s infinite;
+  opacity: .50;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,.3);
+  transition: all 5s ease;
+}
+#wallpaper {
+  width: 100%;
+  height: 100%;
+  transform: scale(2);
+}
+
+@keyframes jj {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+/* === PESAN BERGESER DITENGAH === */
+#pergeseran {
+  margin-top: 40px;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0);
+  transition: all 1s ease;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 100%;
+  padding: 0 40px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+#pergeseran p {
+  background: rgba(0, 0, 0, .3);
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  text-align: center;
+  line-height: 1.4em;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 40px;
+  scroll-snap-align: center;
+  color: white;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);
+}
+#pergeseran p b span {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* === KALIMAT === */
+#kalimat {
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5em;
+  text-align: left;
+  margin: 20px 50px;
+}
+#kalimat p {
+  margin-bottom: 15px;
+}
+
+/* === PESAN AKHIR === */
+#pesanAkhir {
+  margin-top: 30px;
+  font-family: var(--gaya-font3);
+  font-size: 22px !important;
+  font-weight: 400;
+  text-align: center;
+  position: absolute;
+  opacity: 0;
+}
+
+/* Tombol LOVE & lainnya tetap seperti aslinya */
+.lovein {
+  background: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s ease;
+}
+.lovein:hover {
+  transform: scale(.9);
+}
+#ket, #ketgeser {
+  color: white;
+  font-size: 12px;
+  font-weight: 400;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);
+}
+#ketgeser {
+  margin-top: 20px;
+  font-size: 10px;
+  transform: scale(0);
+  opacity: 0;
+  transition: all .7s ease;
+  }
